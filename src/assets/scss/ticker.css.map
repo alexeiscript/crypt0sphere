@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EACH,OAAO,EAAE,IAAI;EACb,aAAa,EAAE,IAAI;CACtB;;AAED,AAAA,WAAW,CAAC;EACR,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,MAAM;CAMrB;;AARD,AAII,WAJO,CAIP,CAAC,CAAC;EACE,aAAa,EAAE,GAAG;CACrB",
+    "sources": [
+        "ticker.scss"
+    ],
+    "names": [],
+    "file": "ticker.css"
+}

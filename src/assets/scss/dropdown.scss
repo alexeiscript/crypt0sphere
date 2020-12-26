@@ -1,0 +1,52 @@
+.dropdown-menu {
+    position: absolute;
+    top: 153px;
+    width: 220px;
+    list-style-type: none;
+    text-align: start;
+    padding-left: 0;
+    background: #ffffff;
+}
+
+.dropdown-link {
+    color: #000000;
+    display: block;
+    text-decoration: none;
+    height: 40px;
+    padding: 15px;
+    transition: all .2s ease;
+    border: solid 1px #ffffff;
+    &:hover {
+        background: #01B365;
+        color: #ffffff;
+    }
+    @media (max-width: 960px) and (min-width: 400px) {
+        font-size: 1.3em;
+    }
+    
+}
+
+.cryptopedia {
+    display: flex;
+
+    svg {
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 960px) {
+    .dropdown-link {
+        color: #ffffff;
+        border: none;
+        padding-left: 30px;
+    }
+
+    .dropdown-menu.clicked {
+        background: #01B365;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        padding-top: 100px;
+    }
+}

@@ -1,0 +1,23 @@
+header .header-top {
+  color: #ffffff;
+  background: #000000;
+}
+
+header .header-top #logo {
+  font-size: 2em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header .header-top .logo-tickers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=header.css.map */
