@@ -1,36 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { AppContext } from '../context/newsAPI'
-import axios from 'axios'
+import { NewsContextProvider } from "../news/newsContext";
+import Articles from '../news/articles'
+import '../../assets/scss/home.scss'
 
 function Home() {
-    const [news, setNews] = useState()
-    const apiKey = '4dcdc22c553141d6a8cece7522cd39e7'
-    async function getNews() {
-        try {
-            const response = await axios.get(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`);
-            setNews(response.data.articles)
-        } catch (error) {
-            console.error(error);
-        }
-    }
-  
-    useEffect(() => {
-      getNews()
-    }, [])
-
-    console.log(news)
-    
     return(
-       
-            news.map((item) => {
-                return(
-                    <>
-                        <h1>{item.title}</h1>
-                        <h3>{item.author}</h3>
-                    </>
-                ) 
-            })    
-        
+        <div className="containex">
+            <div className="home">
+                <div className="home-left">
+                    <NewsContextProvider>
+                        <Articles />
+                    </NewsContextProvider>
+                </div>
+                <div className="home-right">
+
+                </div>
+            </div>
+        </div>
     )
 }
 

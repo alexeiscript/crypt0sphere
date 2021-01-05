@@ -1,0 +1,26 @@
+.article-div {
+    max-width: 600px;
+    // background: #ffffff;
+    color: #ffffff;
+    display: flex;
+    margin: 10px;
+
+    h2 {
+        font-weight: 400;
+    }
+    .image-div {
+
+        img {
+            width: 200px;
+            margin: 10px;
+        }
+    }
+
+    .article-details {
+        margin-left: 10px;
+
+        h2 {
+            margin-top: 5px;
+        }
+    }
+}

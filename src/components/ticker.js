@@ -8,7 +8,7 @@ function Ticker() {
         {name: 'ETH'},
         {name: 'LTC'},
         {name: 'LINK'},
-        {name: 'XRP'}
+        {name: 'XTZ'}
     ]
 
     return(

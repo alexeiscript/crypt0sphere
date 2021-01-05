@@ -18,10 +18,12 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div className="containex">
-                <Router>
-                    <Navigation />
-                </Router>
+            <div className="nav-background">
+                <div className="containex">
+                    <Router>
+                        <Navigation />
+                    </Router>
+                </div>
             </div>
         </header>
     )
