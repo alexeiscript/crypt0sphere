@@ -1,47 +1,34 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import NumberFormat from 'react-number-format'
 
-class TickerAPI extends Component {
+export const TickerAPI = (props) => {
+    const [price, setPrice] = useState();
 
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            price: null,
-        }
-
-        this.pollPrice = this.pollPrice.bind(this)
+    const getPrice = () => {
+        let symbol = props.ticker;
+        axios.get('https://min-api.cryptocompare.com/data/price?fsym='+symbol+'&tsyms=USD')
+        .then((response) => setPrice(response.data))
+        .catch(error => console.log(error))
     }
 
-    componentDidMount() {
-        this.pollPrice()
-        setInterval(this.pollPrice, 100000);
+    useEffect(() => {
+        getPrice()
+        setInterval(getPrice, 10000)
+    }, [])
+
+    // handling undefined error -> checking initial price
+    if (!price) {
+        return null;
     }
 
-    pollPrice() {
-        let symbol = this.props.ticker;
-        let url = 'https://min-api.cryptocompare.com/data/price?fsym='+symbol+'&tsyms=USD';
-        fetch(url)
-        .then(resp => resp.json())
-        .then(json => {
-            this.setState(() => ({
-                price: json.USD
-            }))
-        })
-    }
-
-    render() {
-        return (
-            <NumberFormat 
-                displayType={'text'} 
-                prefix={'$'} 
-                value={this.state.price} 
-                decimalScale={2} 
-                thousandSeparator={true}
-            />
-            
-        )
-    }
+    return (
+        <NumberFormat 
+            displayType={'text'} 
+            prefix={'$'} 
+            value={price.USD} 
+            decimalScale={2} 
+            thousandSeparator={true}
+        />
+    )
 }
-
-export default TickerAPI

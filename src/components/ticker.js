@@ -1,4 +1,4 @@
-import TickerAPI from "./tickerAPI"
+import { TickerAPI } from "./tickerAPI"
 import '../assets/scss/ticker.scss'
 
 function Ticker() {
@@ -6,8 +6,8 @@ function Ticker() {
     const symbols = [
         {name: 'BTC'},
         {name: 'ETH'},
+        {name: 'BCH'},
         {name: 'LTC'},
-        {name: 'LINK'},
         {name: 'XTZ'}
     ]
 

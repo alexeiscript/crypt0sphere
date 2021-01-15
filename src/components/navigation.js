@@ -49,7 +49,7 @@ function Navigation() {
                     onMouseLeave={onMouseLeave}
                     onClick={onMouseEnter}
                 >
-                    <Link className="nav-links cryptopedia">Cryptopedia <KeyboardArrowDownIcon /></Link>
+                    <Link to='/cryptopedia'  className="nav-links cryptopedia">Cryptopedia <KeyboardArrowDownIcon /></Link>
                     {dropdown && 
                     <ul 
                         onClick={handleClick}

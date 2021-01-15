@@ -4,16 +4,16 @@ import NewsArticle from './newsArticle'
 import '../../assets/scss/articles.scss'
 
 function Articles(props) {
-    const { data } = useContext(NewsContext);
-    // const newsTitle = data.data.title
+    const { data } = useContext(NewsContext)
+
     if (!data) {
         return null;
     }
-    console.log(data)
+
     return(    
         <div>
-             {data.map((item) => (
-                 <NewsArticle data={item}  />
+             {data.map((item, index) => (
+                 <NewsArticle key={index} data={item}  />
              ))}
             
         </div>  

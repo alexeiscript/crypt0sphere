@@ -1,10 +1,12 @@
 import React from "react";
+import moment from 'moment'
 import '../../assets/scss/articles.scss'
 
 function NewsArticle({data}) {
-  // const date = data.createdAt
-  // const theDate = new Date().getDay()
-  // console.log(theDate)
+
+  const created = data.createdAt
+  const date = moment(created).format('D MMM YY')
+
   return (
     <article className="article-div" >
         <div className="image-div">
@@ -12,8 +14,7 @@ function NewsArticle({data}) {
         </div>
         <div className="article-details">
             <h2>{data.title}</h2>
-            {/* <h3>wepul</h3> */}
-            <p>{data.createdAt}</p>
+            <p>{date}</p>
             <p>{data.author}</p>
             <p>{data.description}</p>
         </div>
